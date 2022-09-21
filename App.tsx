@@ -1,9 +1,8 @@
 import {
   Button,
-  Center,
   Heading,
+  HStack,
   NativeBaseProvider,
-  Text,
   VStack
 } from 'native-base';
 import { useFonts } from 'expo-font';
@@ -12,7 +11,14 @@ import InputForm from './src/components/InputForm';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useSchemas } from './src/hooks/useSchemas';
-import { useCallback, useState } from 'react';
+import Set from './src/components/Set';
+import { useState } from 'react';
+
+const sets = [
+  { id: 1, lift: 'Squat', max: '140kg', reps: '8', rpe: '6' },
+  { id: 2, lift: 'Bench', max: '90kg', reps: '6', rpe: '6' },
+  { id: 3, lift: 'Deadlift', max: '200kg', reps: '2', rpe: '7' }
+];
 
 const AppView = () => {
   const { percentageCalculatorSchema } = useSchemas();
@@ -20,8 +26,10 @@ const AppView = () => {
   const {
     control,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
+    reset
   } = useForm({
+    mode: 'onChange',
     resolver: yupResolver(percentageCalculatorSchema)
   });
 
@@ -32,8 +40,10 @@ const AppView = () => {
     EuclidCircularA_Semibold: require('./assets/fonts/EuclidCircularA-Semibold.otf')
   });
 
-  const setValues = values => {
-    return console.log(values);
+  const [setsState, setSetsState] = useState(sets);
+
+  const addSet = (values: any) => {
+    console.log(values);
   };
 
   return (
@@ -73,7 +83,31 @@ const AppView = () => {
           label='RPE (1-9)'
           error={errors.rpe?.message}
         />
-        <Button onPress={handleSubmit(setValues)}>Calculate</Button>
+        <VStack
+          bg='blue.300'
+          borderRadius={10}
+          paddingY={5}
+          paddingX={70}
+        >
+          {setsState.map(item => {
+            return (
+              <Set
+                key={item.id}
+                lift={item.lift}
+                max={item.max}
+                reps={item.reps}
+                rpe={item.rpe}
+              />
+            );
+          })}
+        </VStack>
+        <Button
+          onPress={handleSubmit(addSet)}
+          bg='purple.400'
+          _pressed={{ bg: 'purple.600' }}
+        >
+          Calculate
+        </Button>
       </VStack>
     </VStack>
   );

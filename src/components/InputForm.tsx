@@ -29,7 +29,7 @@ const InputForm = forwardRef(
           name={name}
           render={({ field: { onChange, value } }) => (
             <Input
-              onChangeText={text => onChange(text)}
+              onChangeText={(text: string) => onChange(text)}
               value={value ?? ''}
               ref={ref}
               {...rest}
