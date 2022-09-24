@@ -11,7 +11,7 @@ const AppView = () => {
     EuclidCircularA_Semibold: require('./assets/fonts/EuclidCircularA-Semibold.otf')
   });
 
-  return <Routes initialScreenName='Dashboard' />;
+  return <Routes />;
 };
 export default function App() {
   return (

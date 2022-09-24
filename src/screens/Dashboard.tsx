@@ -1,8 +1,7 @@
-import { Text, VStack } from 'native-base';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { VStack } from 'native-base';
 
 const Dashboard = () => {
-  const { Navigator, Screen } = createDrawerNavigator();
-  return <Navigator></Navigator>;
+  return <VStack />;
 };
+
 export default Dashboard;
