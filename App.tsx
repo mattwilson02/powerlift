@@ -1,12 +1,7 @@
-import {
-  Button,
-  Heading,
-  HStack,
-  NativeBaseProvider,
-  VStack
-} from 'native-base';
+import { NativeBaseProvider } from 'native-base';
 import { useFonts } from 'expo-font';
 import theme from './src/styles/theme';
+import Routes from './src/screens';
 
 const AppView = () => {
   const [fontsLoaded] = useFonts({
@@ -16,12 +11,7 @@ const AppView = () => {
     EuclidCircularA_Semibold: require('./assets/fonts/EuclidCircularA-Semibold.otf')
   });
 
-  return (
-    <VStack
-      flex={1}
-      bg='coolGray.400'
-    ></VStack>
-  );
+  return <Routes initialScreenName='Dashboard' />;
 };
 export default function App() {
   return (
