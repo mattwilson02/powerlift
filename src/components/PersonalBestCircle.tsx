@@ -10,11 +10,16 @@ const PersonalBestCircle = ({ lift, pb }: Props) => {
     <VStack
       width={100}
       height={100}
-      borderRadius={100}
-      bg='blue.200'
+      borderRadius={20}
+      bg='gray.500'
     >
       <Center flex={1}>
-        <Text fontSize='md'>{pb}</Text>
+        <Text
+          fontWeight={500}
+          fontSize='lg'
+        >
+          {pb}
+        </Text>
         <Heading
           fontWeight={500}
           fontSize='md'

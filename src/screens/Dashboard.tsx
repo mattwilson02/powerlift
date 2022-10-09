@@ -61,7 +61,7 @@ const Dashboard = () => {
   return (
     <ScrollView
       flex={1}
-      bg='blue.100'
+      bg='black'
     >
       <VStack flex={1}>
         <Heading
@@ -69,17 +69,22 @@ const Dashboard = () => {
           fontWeight={500}
           fontSize='md'
           opacity={50}
+          color='white'
         >
           Personal Bests
         </Heading>
-        <HStack
+        <VStack
           flex={1}
           mx={10}
-          space={3}
+          space={6}
         >
-          <VStack
+          <HStack
             space={4}
             alignItems='center'
+            bg='gray.800'
+            p={3}
+            borderRadius={15}
+            justifyContent='space-between'
           >
             <PersonalBestCircle
               lift='Squat'
@@ -96,10 +101,14 @@ const Dashboard = () => {
               inActiveStrokeColor='#2ecc71'
               inActiveStrokeOpacity={0.2}
             />
-          </VStack>
-          <VStack
+          </HStack>
+          <HStack
             space={4}
             alignItems='center'
+            bg='gray.800'
+            p={3}
+            borderRadius={15}
+            justifyContent='space-between'
           >
             <PersonalBestCircle
               lift='Bench'
@@ -115,10 +124,14 @@ const Dashboard = () => {
               inActiveStrokeOpacity={0.2}
               subtitle=' to Goal'
             />
-          </VStack>
-          <VStack
+          </HStack>
+          <HStack
             space={4}
             alignItems='center'
+            bg='gray.800'
+            p={3}
+            borderRadius={15}
+            justifyContent='space-between'
           >
             <PersonalBestCircle
               lift='Deadlift'
@@ -134,8 +147,8 @@ const Dashboard = () => {
               inActiveStrokeOpacity={0.2}
               subtitle=' to Goal'
             />
-          </VStack>
-        </HStack>
+          </HStack>
+        </VStack>
         <Center
           flex={1}
           mt={90}
