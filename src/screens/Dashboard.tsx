@@ -61,10 +61,6 @@ const Dashboard = () => {
             progress={progressDeadlift}
           />
         </VStack>
-        <Center
-          flex={1}
-          mt={90}
-        ></Center>
       </VStack>
     </ScrollView>
   );
