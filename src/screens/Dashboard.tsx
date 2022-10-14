@@ -1,58 +1,8 @@
 import { Center, Heading, HStack, ScrollView, Text, VStack } from 'native-base';
-import CircularProgress from 'react-native-circular-progress-indicator';
-import PersonalBestCircle from '../components/PersonalBestCircle';
+import LiftProgressDisplay from '../components/LiftProgressDisplay';
+import { goals, initialBests, personalBests } from '../constants/personalBests';
 
 const Dashboard = () => {
-  type KeyValues = {
-    key: number;
-    value: string;
-  };
-
-  const initialBests: KeyValues[] = [
-    {
-      key: 115,
-      value: '185kg'
-    },
-    {
-      key: 95,
-      value: '115kg'
-    },
-    {
-      key: 160,
-      value: '215kg'
-    }
-  ];
-
-  const goals: KeyValues[] = [
-    {
-      key: 200,
-      value: '200kg'
-    },
-    {
-      key: 120,
-      value: '120kg'
-    },
-    {
-      key: 230,
-      value: '230kg'
-    }
-  ];
-
-  const personalBests: KeyValues[] = [
-    {
-      key: 185,
-      value: '185kg'
-    },
-    {
-      key: 115,
-      value: '115kg'
-    },
-    {
-      key: 215,
-      value: '215kg'
-    }
-  ];
-
   const progress = (pb: number, ib: number, goal: number): number => {
     return ((pb - ib) / (goal - ib)) * 100;
   };
@@ -95,76 +45,21 @@ const Dashboard = () => {
           mx={10}
           space={6}
         >
-          <HStack
-            space={4}
-            alignItems='center'
-            bg='gray.800'
-            p={3}
-            borderRadius={15}
-            justifyContent='space-between'
-          >
-            <PersonalBestCircle
-              lift='Squat'
-              pb={personalBests[0].value}
-            />
-
-            <CircularProgress
-              radius={45}
-              value={progressSquat}
-              subtitle=' to Goal'
-              titleColor='#222'
-              titleFontSize={20}
-              valueSuffix='%'
-              inActiveStrokeColor='#2ecc71'
-              inActiveStrokeOpacity={0.2}
-            />
-          </HStack>
-          <HStack
-            space={4}
-            alignItems='center'
-            bg='gray.800'
-            p={3}
-            borderRadius={15}
-            justifyContent='space-between'
-          >
-            <PersonalBestCircle
-              lift='Bench'
-              pb={personalBests[1].value}
-            />
-            <CircularProgress
-              radius={45}
-              value={progressBench}
-              titleColor='#222'
-              titleFontSize={20}
-              valueSuffix='%'
-              inActiveStrokeColor='#2ecc71'
-              inActiveStrokeOpacity={0.2}
-              subtitle=' to Goal'
-            />
-          </HStack>
-          <HStack
-            space={4}
-            alignItems='center'
-            bg='gray.800'
-            p={3}
-            borderRadius={15}
-            justifyContent='space-between'
-          >
-            <PersonalBestCircle
-              lift='Deadlift'
-              pb={personalBests[2].value}
-            />
-            <CircularProgress
-              radius={45}
-              value={progressDeadlift}
-              titleColor='#222'
-              titleFontSize={20}
-              valueSuffix='%'
-              inActiveStrokeColor='#2ecc71'
-              inActiveStrokeOpacity={0.2}
-              subtitle=' to Goal'
-            />
-          </HStack>
+          <LiftProgressDisplay
+            liftName='Squat'
+            pb={personalBests[0].value}
+            progress={progressSquat}
+          />
+          <LiftProgressDisplay
+            liftName='Bench'
+            pb={personalBests[1].value}
+            progress={progressBench}
+          />
+          <LiftProgressDisplay
+            liftName='Deadlift'
+            pb={personalBests[2].value}
+            progress={progressDeadlift}
+          />
         </VStack>
         <Center
           flex={1}

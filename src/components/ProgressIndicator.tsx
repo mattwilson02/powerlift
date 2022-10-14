@@ -5,7 +5,7 @@ type Props = {
   pb: string | undefined;
 };
 
-const PersonalBestCircle = ({ lift, pb }: Props) => {
+const ProgressIndicator = ({ lift, pb }: Props) => {
   return (
     <VStack
       width={100}
@@ -31,4 +31,4 @@ const PersonalBestCircle = ({ lift, pb }: Props) => {
   );
 };
 
-export default PersonalBestCircle;
+export default ProgressIndicator;
