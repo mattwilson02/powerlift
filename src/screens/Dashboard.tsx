@@ -1,5 +1,4 @@
 import { Center, Heading, HStack, ScrollView, Text, VStack } from 'native-base';
-import { useState } from 'react';
 import CircularProgress from 'react-native-circular-progress-indicator';
 import PersonalBestCircle from '../components/PersonalBestCircle';
 
@@ -26,37 +25,55 @@ const Dashboard = () => {
 
   const goals: KeyValues[] = [
     {
-      key: 200 - initialBests[0].key,
+      key: 200,
       value: '200kg'
     },
     {
-      key: 120 - initialBests[1].key,
+      key: 120,
       value: '120kg'
     },
     {
-      key: 230 - initialBests[2].key,
+      key: 230,
       value: '230kg'
     }
   ];
 
   const personalBests: KeyValues[] = [
     {
-      key: 185 - initialBests[0].key,
+      key: 185,
       value: '185kg'
     },
     {
-      key: 115 - initialBests[1].key,
+      key: 115,
       value: '115kg'
     },
     {
-      key: 215 - initialBests[2].key,
+      key: 215,
       value: '215kg'
     }
   ];
 
-  const progressSquat = (personalBests[0].key / goals[0].key) * 100;
-  const progressBench = (personalBests[1].key / goals[1].key) * 100;
-  const progressDeadlift = (personalBests[2].key / goals[2].key) * 100;
+  const progress = (pb: number, ib: number, goal: number): number => {
+    return ((pb - ib) / (goal - ib)) * 100;
+  };
+
+  const progressSquat = progress(
+    personalBests[0].key,
+    initialBests[0].key,
+    goals[0].key
+  );
+
+  const progressBench = progress(
+    personalBests[1].key,
+    initialBests[1].key,
+    goals[1].key
+  );
+
+  const progressDeadlift = progress(
+    personalBests[2].key,
+    initialBests[2].key,
+    goals[2].key
+  );
 
   return (
     <ScrollView

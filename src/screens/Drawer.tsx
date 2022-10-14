@@ -17,7 +17,8 @@ const Drawer = () => {
         drawerStyle: {
           backgroundColor: colors.gray[500]
         },
-        drawerActiveTintColor: colors.black
+        drawerActiveTintColor: colors.black,
+        drawerInactiveTintColor: colors.black
       }}
     >
       <Screen
