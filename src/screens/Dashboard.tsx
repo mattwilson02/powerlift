@@ -1,5 +1,5 @@
 import { Heading, ScrollView, Text, VStack } from 'native-base';
-import { useGetNumbersQuery } from '../api/graphqlApi';
+
 import LiftProgressDisplay from '../components/LiftProgressDisplay';
 import { goals, initialBests, personalBests } from '../constants/personalBests';
 
