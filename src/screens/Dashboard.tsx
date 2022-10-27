@@ -1,32 +1,34 @@
-import { Heading, ScrollView, Text, VStack } from 'native-base';
+import { Heading, HStack, ScrollView, Text, VStack } from 'native-base';
 
-import LiftProgressDisplay from '../components/LiftProgressDisplay';
-import { goals, initialBests, personalBests } from '../constants/personalBests';
+import { useQuery } from '@apollo/client';
+import { GET_MY_SBD_MAX } from '../api/apolloServer';
+import { LiftStats } from '../interfaces/types';
+import ProgressIndicator from '../components/ProgressIndicator';
 
 const Dashboard = () => {
-  const progress = (pb: number, ib: number, goal: number): number => {
-    return ((pb - ib) / (goal - ib)) * 100;
-  };
+  const { data, loading } = useQuery(GET_MY_SBD_MAX);
 
-  const progressSquat = progress(
-    personalBests[0].key,
-    initialBests[0].key,
-    goals[0].key
-  );
+  const personalBests: LiftStats[] = [
+    {
+      key: 185,
+      value: `${data && data.sbd_max[0].Squat}kg`,
+      name: 'Squat'
+    },
+    {
+      key: 115,
+      value: `${data && data.sbd_max[0].Bench}kg`,
+      name: 'Bench'
+    },
+    {
+      key: 215,
+      value: `${data && data.sbd_max[0].Deadlift}kg`,
+      name: 'Deadlift'
+    }
+  ];
 
-  const progressBench = progress(
-    personalBests[1].key,
-    initialBests[1].key,
-    goals[1].key
-  );
-
-  const progressDeadlift = progress(
-    personalBests[2].key,
-    initialBests[2].key,
-    goals[2].key
-  );
-
-  return (
+  return loading ? (
+    <Text>Loading...</Text>
+  ) : (
     <ScrollView
       flex={1}
       bg='black'
@@ -46,21 +48,21 @@ const Dashboard = () => {
           mx={10}
           space={6}
         >
-          <LiftProgressDisplay
-            liftName='Squat'
-            pb={personalBests[0].value}
-            progress={progressSquat}
-          />
-          <LiftProgressDisplay
-            liftName='Bench'
-            pb={personalBests[1].value}
-            progress={progressBench}
-          />
-          <LiftProgressDisplay
-            liftName='Deadlift'
-            pb={personalBests[2].value}
-            progress={progressDeadlift}
-          />
+          {personalBests.map(({ value, name }) => (
+            <HStack
+              space={4}
+              alignItems='center'
+              bg='gray.800'
+              p={3}
+              borderRadius={15}
+              justifyContent='space-between'
+            >
+              <ProgressIndicator
+                lift={name}
+                pb={value}
+              />
+            </HStack>
+          ))}
         </VStack>
       </VStack>
     </ScrollView>

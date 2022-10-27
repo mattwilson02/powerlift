@@ -1,4 +1,4 @@
-import { Center, Heading, Text, VStack } from 'native-base';
+import { Center, Heading, HStack, Text, VStack } from 'native-base';
 
 type Props = {
   lift: string;

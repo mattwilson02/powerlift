@@ -3,6 +3,27 @@ import { useFonts } from 'expo-font';
 import theme from './src/styles/theme';
 import Routes from './src/screens';
 
+import {
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+  HttpLink
+} from '@apollo/client';
+import { useState } from 'react';
+
+export const createApolloClient = () => {
+  return new ApolloClient({
+    link: new HttpLink({
+      uri: 'https://amazing-maggot-25.hasura.app/v1/graphql',
+      headers: {
+        'x-hasura-admin-secret':
+          'KnMCmNqzi8344BLciixWvJKyN8VusPcL72VtjDHqVxzWsrgVpGFc2LbOf4Ueajix'
+      }
+    }),
+    cache: new InMemoryCache()
+  });
+};
+
 const AppView = () => {
   const [fontsLoaded] = useFonts({
     EuclidCircularA_Bold: require('./assets/fonts/EuclidCircularA-Bold.otf'),
@@ -14,9 +35,12 @@ const AppView = () => {
   return <Routes />;
 };
 export default function App() {
+  const [client] = useState(createApolloClient);
   return (
-    <NativeBaseProvider theme={theme}>
-      <AppView />
-    </NativeBaseProvider>
+    <ApolloProvider client={client}>
+      <NativeBaseProvider theme={theme}>
+        <AppView />
+      </NativeBaseProvider>
+    </ApolloProvider>
   );
 }
