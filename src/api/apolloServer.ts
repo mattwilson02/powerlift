@@ -11,3 +11,12 @@ export const GET_MY_SBD_MAX = gql`
     }
   }
 `;
+
+export const GET_MY_WORKOUT = gql`
+  query workout {
+    workout {
+      name
+      compound
+    }
+  }
+`;
