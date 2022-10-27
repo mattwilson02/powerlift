@@ -1,4 +1,4 @@
-import { Center, Heading, HStack, ScrollView, Text, VStack } from 'native-base';
+import { Heading, HStack, ScrollView, Text, VStack } from 'native-base';
 import { useQuery } from '@apollo/client';
 import { GET_MY_SBD_MAX } from '../api/apolloServer';
 import { LiftStats } from '../interfaces/types';
@@ -43,28 +43,18 @@ const Dashboard = () => {
         >
           Personal Bests
         </Heading>
-        <VStack
+        <HStack
           flex={1}
-          mx={10}
           space={6}
+          justifyContent='center'
         >
           {personalBests.map(({ value, name }) => (
-            <HStack
-              key={name}
-              space={4}
-              alignItems='center'
-              bg='gray.800'
-              p={2}
-              borderRadius={20}
-              justifyContent='space-between'
-            >
-              <ProgressIndicator
-                lift={name}
-                pb={value}
-              />
-            </HStack>
+            <ProgressIndicator
+              lift={name}
+              pb={value}
+            />
           ))}
-        </VStack>
+        </HStack>
       </VStack>
     </ScrollView>
   );
