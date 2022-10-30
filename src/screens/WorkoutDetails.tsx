@@ -2,10 +2,10 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { VStack } from 'native-base';
 import { RootStackParamList } from '.';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'RpeCalculator'>;
+type Props = NativeStackScreenProps<RootStackParamList, 'WorkoutDetails'>;
 
-const RpeCalculator = () => {
+const WorkoutDetails = () => {
   return <VStack />;
 };
 
-export default RpeCalculator;
+export default WorkoutDetails;
