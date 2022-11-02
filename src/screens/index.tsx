@@ -11,6 +11,7 @@ import Workouts from './Workouts';
 import { AntDesign } from '@expo/vector-icons';
 import { Pressable, useTheme } from 'native-base';
 import { useCallback } from 'react';
+import { Workout } from '../interfaces/types';
 
 type Routes = {
   Drawer: undefined;
@@ -18,18 +19,7 @@ type Routes = {
   Workouts: any;
   RpeCalculator: undefined;
   WorkoutDetails: {
-    details: {
-      workout: [
-        {
-          compound: {
-            name: string;
-            rpe: string;
-            sets: string;
-          };
-          name: string;
-        }
-      ];
-    };
+    details: Workout;
   };
 };
 

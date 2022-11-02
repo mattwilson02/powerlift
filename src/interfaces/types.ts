@@ -6,3 +6,18 @@ export type KeyValues = {
 export interface LiftStats extends KeyValues {
   name: string;
 }
+
+export type Workout = {
+  id: number;
+  accessories: {
+    name: string;
+    reps?: string;
+    sets?: string;
+  };
+  compound: {
+    name: string;
+    rpe: string;
+    sets: string;
+  };
+  name: string;
+};

@@ -17,6 +17,7 @@ export const GET_MY_WORKOUT = gql`
     workout {
       name
       compound
+      accessories
     }
   }
 `;

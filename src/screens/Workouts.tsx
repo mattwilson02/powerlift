@@ -12,6 +12,7 @@ import Loading from '../components/Loading';
 import { AntDesign } from '@expo/vector-icons';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '.';
+import { Workout } from '../interfaces/types';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Workouts'>;
 
@@ -47,26 +48,31 @@ const Workouts = ({ navigation }: Props) => {
             </HStack>
           </Pressable>
           {data && (
-            <Pressable
-              onPress={() =>
-                navigation.navigate('WorkoutDetails', { details: data })
-              }
-              bg='gray.800'
-              p={3}
-              borderRadius='xl'
-            >
-              <HStack
-                justifyContent='space-between'
-                alignItems='center'
-              >
-                <Heading color='white'>{data.workout[0].name}</Heading>
-                <AntDesign
-                  name='rightcircle'
-                  size={24}
-                  color='white'
-                />
-              </HStack>
-            </Pressable>
+            <>
+              {data.workout.map((workout: Workout) => (
+                <Pressable
+                  key={workout.id}
+                  onPress={() =>
+                    navigation.navigate('WorkoutDetails', { details: workout })
+                  }
+                  bg='gray.800'
+                  p={3}
+                  borderRadius='xl'
+                >
+                  <HStack
+                    justifyContent='space-between'
+                    alignItems='center'
+                  >
+                    <Heading color='white'>{workout.name}</Heading>
+                    <AntDesign
+                      name='rightcircle'
+                      size={24}
+                      color='white'
+                    />
+                  </HStack>
+                </Pressable>
+              ))}
+            </>
           )}
         </VStack>
       </VStack>
