@@ -13,6 +13,7 @@ export type Workout = {
     name: string;
     reps?: string;
     sets?: string;
+    rpe?: string;
   };
   compound: {
     name: string;

@@ -7,8 +7,6 @@ type Props = NativeStackScreenProps<RootStackParamList, 'WorkoutDetails'>;
 const WorkoutDetails = ({ route }: Props) => {
   const workout = route.params.details;
 
-  console.log(workout);
-
   if (!workout) return;
 
   return (
@@ -50,12 +48,21 @@ const WorkoutDetails = ({ route }: Props) => {
             <Text
               fontWeight={700}
               color='white'
+              fontSize='lg'
             >
               Exercises
             </Text>
             <Text
               fontWeight={700}
               color='white'
+              fontSize='lg'
+            >
+              RPE
+            </Text>
+            <Text
+              fontWeight={700}
+              color='white'
+              fontSize='lg'
             >
               Sets
             </Text>
@@ -65,16 +72,48 @@ const WorkoutDetails = ({ route }: Props) => {
             justifyContent='space-between'
             p={2}
           >
-            <Text color='white'>{workout.compound.name}</Text>
-            <Text color='white'>{workout.compound.sets}</Text>
+            <Text
+              fontSize='md'
+              color='white'
+            >
+              {workout.compound.name}
+            </Text>
+            <Text
+              fontSize='md'
+              color='white'
+            >
+              {workout.compound.rpe}
+            </Text>
+            <Text
+              fontSize='md'
+              color='white'
+            >
+              {workout.compound.sets}
+            </Text>
           </HStack>
           <HStack
             bg='gray.400'
             justifyContent='space-between'
             p={2}
           >
-            <Text color='white'>{workout.accessories.name}</Text>
-            <Text color='white'>{workout.accessories.sets}</Text>
+            <Text
+              color='white'
+              fontSize='md'
+            >
+              {workout.accessories.name}
+            </Text>
+            <Text
+              color='white'
+              fontSize='md'
+            >
+              {workout.accessories.rpe}
+            </Text>
+            <Text
+              color='white'
+              fontSize='md'
+            >
+              {workout.accessories.sets}
+            </Text>
           </HStack>
         </View>
       </VStack>

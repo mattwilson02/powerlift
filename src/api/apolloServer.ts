@@ -21,3 +21,23 @@ export const GET_MY_WORKOUT = gql`
     }
   }
 `;
+
+export const CREATE_WORKOUT = gql`
+  mutation Workout(
+    $name: String!
+    $compound: jsonb!
+    $id: Int!
+    $accessories: jsonb!
+  ) {
+    insert_workout_one(
+      object: {
+        name: $name
+        compound: $compound
+        accessories: $accessories
+        id: $id
+      }
+    ) {
+      id
+    }
+  }
+`;
