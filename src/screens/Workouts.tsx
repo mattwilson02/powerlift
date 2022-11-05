@@ -5,6 +5,7 @@ import {
   Pressable,
   ScrollView,
   useTheme,
+  View,
   VStack
 } from 'native-base';
 import { GET_MY_WORKOUT } from '../api/apolloServer';
@@ -34,18 +35,13 @@ const Workouts = ({ navigation }: Props) => {
       >
         <VStack space={4}>
           <Pressable onPress={() => navigation.navigate('AddWorkout')}>
-            <HStack
-              alignItems='center'
-              space={2}
-              justifyContent='center'
-            >
-              <Heading color='blue.600'>Add Workout</Heading>
+            <View alignSelf='center'>
               <AntDesign
                 name='pluscircle'
                 size={30}
                 color={colors.blue[600]}
               />
-            </HStack>
+            </View>
           </Pressable>
           {data && (
             <>

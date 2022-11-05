@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const GET_MY_SBD_MAX = gql`
-  query sbd_max {
-    sbd_max(where: { id: { _eq: 1 } }) {
+  query sbd_max($id: Int!) {
+    sbd_max(where: { id: { _eq: $id } }) {
       Name
       Squat
       Bench

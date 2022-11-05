@@ -12,7 +12,11 @@ import Clock from '../components/Clock';
 type Props = NativeStackScreenProps<RootStackParamList, 'Dashboard'>;
 
 const Dashboard = () => {
-  const { data, loading } = useQuery(GET_MY_SBD_MAX);
+  const { data, loading } = useQuery(GET_MY_SBD_MAX, {
+    variables: {
+      id: 1
+    }
+  });
   const [time, setTime] = useState('');
 
   const personalBests: LiftStats[] = [
