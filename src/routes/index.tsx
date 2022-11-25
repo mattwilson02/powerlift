@@ -3,8 +3,7 @@ import {
   useNavigationContainerRef
 } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Drawer from './Drawer/Drawer';
-import Dashboard from './Drawer/Drawer';
+
 import RpeCalculator from '../screens/Drawer/RPECalculator';
 import WorkoutDetails from '../screens/Drawer/Workouts/WorkoutDetails';
 import Workouts from '../screens/Drawer/Workouts';
@@ -13,6 +12,8 @@ import { Pressable, useTheme } from 'native-base';
 import { useCallback } from 'react';
 import { Workout } from '../interfaces/types';
 import AddWorkout from '../screens/Drawer/Workouts/AddWorkout';
+import Dashboard from '../screens/Dashboard';
+import Drawer from '../screens/Drawer';
 
 type Routes = {
   Drawer: undefined;

@@ -2,7 +2,7 @@ import { Heading, HStack, ScrollView, Text, VStack } from 'native-base';
 import { useQuery } from '@apollo/client';
 import { GET_MY_SBD_MAX } from '../../graphql/apolloServer';
 import { LiftStats } from '../../interfaces/types';
-import ProgressIndicator from '../../components/ProgressIndicator/ProgressIndicator';
+import ProgressIndicator from '../../components/ProgressIndicator';
 import Loading from '../../components/Loading';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../routes';
