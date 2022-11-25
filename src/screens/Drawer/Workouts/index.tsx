@@ -4,6 +4,7 @@ import {
   HStack,
   Pressable,
   ScrollView,
+  Text,
   useTheme,
   View,
   VStack
@@ -25,7 +26,7 @@ const Workouts = ({ navigation }: Props) => {
     <Loading />
   ) : (
     <ScrollView
-      bg='black'
+      bg='background.0'
       flex={1}
     >
       <VStack
@@ -36,11 +37,20 @@ const Workouts = ({ navigation }: Props) => {
         <VStack space={4}>
           <Pressable onPress={() => navigation.navigate('AddWorkout')}>
             <View alignSelf='center'>
-              <AntDesign
-                name='pluscircle'
-                size={30}
-                color={colors.blue[600]}
-              />
+              <HStack space={2}>
+                <Text
+                  fontWeight={600}
+                  fontSize='lg'
+                  color='build.1'
+                >
+                  Add Workout
+                </Text>
+                <AntDesign
+                  name='pluscircle'
+                  size={30}
+                  color={colors.build[1]}
+                />
+              </HStack>
             </View>
           </Pressable>
           {data && (
@@ -51,7 +61,7 @@ const Workouts = ({ navigation }: Props) => {
                   onPress={() =>
                     navigation.navigate('WorkoutDetails', { details: workout })
                   }
-                  bg='gray.800'
+                  bg='background.2'
                   p={3}
                   borderRadius='xl'
                 >
@@ -59,11 +69,11 @@ const Workouts = ({ navigation }: Props) => {
                     justifyContent='space-between'
                     alignItems='center'
                   >
-                    <Heading color='white'>{workout.name}</Heading>
+                    <Heading color='background.10'>{workout.name}</Heading>
                     <AntDesign
                       name='rightcircle'
                       size={24}
-                      color='white'
+                      color='background.10'
                     />
                   </HStack>
                 </Pressable>

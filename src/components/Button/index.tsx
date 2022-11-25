@@ -9,29 +9,29 @@ type Props = IButtonProps & {
 const Button = ({ children, onPress }: Props) => {
   return (
     <NativeBaseButton
-      borderColor='white'
+      borderColor='background.10'
       onPress={onPress}
-      bgColor='gray.800'
+      bgColor='background.0'
       borderWidth={2}
       _text={{
-        color: 'white'
+        color: 'background.10'
       }}
       _hover={{
         _text: {
-          color: 'white'
+          color: 'background.10'
         },
-        bgColor: 'black'
+        bgColor: 'background.0'
       }}
       _pressed={{
         _focus: {
-          borderColor: 'pink.600',
+          borderColor: 'build.1',
           borderWidth: 2
         },
         _text: {
-          color: 'pink.600'
+          color: 'build.1'
         },
-        borderColor: 'pink.600',
-        bgColor: 'black'
+        borderColor: 'build.1',
+        bgColor: 'background.0'
       }}
     >
       {children}

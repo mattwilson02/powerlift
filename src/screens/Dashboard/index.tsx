@@ -42,7 +42,7 @@ const Dashboard = () => {
   ) : (
     <ScrollView
       flex={1}
-      bg='black'
+      bg='background.0'
       p={6}
     >
       <VStack
@@ -55,7 +55,7 @@ const Dashboard = () => {
         >
           <Heading
             fontSize={26}
-            color='white'
+            color='background.10'
           >
             {data.sbd_max[0].Name}
           </Heading>
@@ -69,8 +69,7 @@ const Dashboard = () => {
         <Heading
           fontWeight={500}
           fontSize='md'
-          opacity={50}
-          color='white'
+          color='background.5'
         >
           Personal Bests
         </Heading>

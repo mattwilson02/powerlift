@@ -62,7 +62,7 @@ const AddWorkout = ({ navigation }: Props) => {
       >
         <Heading
           textAlign='center'
-          color='white'
+          color='background.10'
         >
           New Workout
         </Heading>
@@ -74,7 +74,7 @@ const AddWorkout = ({ navigation }: Props) => {
         <VStack
           p={4}
           borderRadius='lg'
-          bg='gray.700'
+          bg='background.1'
         >
           <InputForm
             control={control}
@@ -97,7 +97,7 @@ const AddWorkout = ({ navigation }: Props) => {
         <VStack
           p={4}
           borderRadius='lg'
-          bg='gray.700'
+          bg='background.1'
         >
           <InputForm
             control={control}

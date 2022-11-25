@@ -10,14 +10,14 @@ const Drawer = () => {
   return (
     <Navigator
       screenOptions={{
-        headerTintColor: colors.black,
+        headerTintColor: colors.background[0],
         headerStyle: {
-          backgroundColor: colors.gray[500]
+          backgroundColor: colors.build[2]
         },
         drawerStyle: {
-          backgroundColor: colors.gray[500]
+          backgroundColor: colors.build[2]
         },
-        drawerActiveTintColor: colors.black,
+        drawerActiveTintColor: colors.background[0],
         drawerInactiveTintColor: colors.black
       }}
     >

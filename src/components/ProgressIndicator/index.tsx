@@ -11,7 +11,7 @@ const ProgressIndicator = ({ lift, pb }: Props) => {
       width={100}
       height={100}
       borderRadius={20}
-      bg='gray.500'
+      bg='build.2'
     >
       <Center flex={1}>
         <Text

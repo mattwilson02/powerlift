@@ -1,7 +1,7 @@
 export const BUILD = {
-  0: '#155FEA',
-  1: '#2F71EC',
-  2: '#5B8FF0'
+  0: '#2F71EC',
+  1: '#5B8FF0',
+  2: '#8AAFF4'
 };
 
 export const mainColors = {

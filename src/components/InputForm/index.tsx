@@ -35,7 +35,7 @@ const InputForm = forwardRef(
           {label && (
             <Text
               fontSize='md'
-              color='gray.400'
+              color='background.7'
             >
               {label}
             </Text>
@@ -52,40 +52,40 @@ const InputForm = forwardRef(
                 borderRadius={4}
                 caretHidden={false}
                 letterSpacing={0.22}
-                borderColor='pink.600'
-                bg='gray.800'
-                color='white'
-                selectionColor='white'
+                borderColor='build.1'
+                bg='background.2'
+                color='background.10'
+                selectionColor='background.10'
                 underlineColorAndroid='transparent'
                 _hover={{
                   shadow: 0,
-                  bg: 'gray.800',
-                  borderColor: 'pink.600',
-                  color: 'white',
-                  placeholderTextColor: 'white'
+                  bg: 'background.2',
+                  borderColor: 'build.1',
+                  color: 'background.10',
+                  placeholderTextColor: 'background.10'
                 }}
                 _focus={{
                   borderWidth: 2,
-                  borderColor: 'pink.600',
-                  bg: 'gray.800',
+                  borderColor: 'build.1',
+                  bg: 'background.2',
                   _hover: {
-                    borderColor: 'pink.600'
+                    borderColor: 'build.1'
                   }
                 }}
                 _disabled={{
-                  bgColor: 'gray.800',
-                  placeholderTextColor: 'gray.600'
+                  bgColor: 'background.2',
+                  placeholderTextColor: 'background.3'
                 }}
-                focusOutlineColor='pink.600'
-                invalidOutlineColor='red.400'
+                focusOutlineColor='build.1'
+                invalidOutlineColor='error'
                 _invalid={{
                   borderWidth: 2,
-                  borderColor: 'red.400',
+                  borderColor: 'error',
                   _hover: {
-                    borderColor: 'red.400'
+                    borderColor: 'error'
                   },
                   _focus: {
-                    borderColor: 'red.400'
+                    borderColor: 'error'
                   }
                 }}
                 onChangeText={text => onChange(text)}

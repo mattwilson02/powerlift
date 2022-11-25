@@ -43,7 +43,7 @@ const Routes = () => {
       <AntDesign
         name='arrowleft'
         size={24}
-        color='black'
+        color={colors.background[0]}
       />
     </Pressable>
   );
@@ -54,7 +54,7 @@ const Routes = () => {
         initialRouteName='Drawer'
         screenOptions={{
           headerStyle: {
-            backgroundColor: colors.gray[600]
+            backgroundColor: colors.build[2]
           },
           headerLeft,
           headerTitleAlign: 'center'

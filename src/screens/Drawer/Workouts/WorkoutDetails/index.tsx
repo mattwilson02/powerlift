@@ -11,105 +11,98 @@ const WorkoutDetails = ({ route }: Props) => {
 
   return (
     <VStack
-      bg='black'
+      bg='background.0'
       flex={1}
       p={6}
     >
       <VStack
-        bg='gray.800'
+        bg='background.2'
         flex={1}
         px={4}
         borderRadius='2xl'
         space={2}
       >
-        <View>
+        <View padding={6}>
           <Heading
             size='lg'
-            color='white'
+            color='background.10'
             alignSelf='center'
           >
             {workout.name}
           </Heading>
-          <Heading
-            size='sm'
-            color='white'
-            alignSelf='center'
-          >
-            Workout
-          </Heading>
         </View>
         <View>
           <HStack
-            bg='gray.600'
+            bg='background.4'
             p={2}
             borderTopRadius='lg'
             justifyContent='space-between'
           >
             <Text
               fontWeight={700}
-              color='white'
+              color='background.10'
               fontSize='lg'
             >
               Exercises
             </Text>
             <Text
               fontWeight={700}
-              color='white'
+              color='background.10'
               fontSize='lg'
             >
               RPE
             </Text>
             <Text
               fontWeight={700}
-              color='white'
+              color='background.10'
               fontSize='lg'
             >
               Sets
             </Text>
           </HStack>
           <HStack
-            bg='gray.400'
+            bg='background.6'
             justifyContent='space-between'
             p={2}
           >
             <Text
               fontSize='md'
-              color='white'
+              color='background.10'
             >
               {workout.compound.name}
             </Text>
             <Text
               fontSize='md'
-              color='white'
+              color='background.10'
             >
               {workout.compound.rpe}
             </Text>
             <Text
               fontSize='md'
-              color='white'
+              color='background.10'
             >
               {workout.compound.sets}
             </Text>
           </HStack>
           <HStack
-            bg='gray.400'
+            bg='background.6'
             justifyContent='space-between'
             p={2}
           >
             <Text
-              color='white'
+              color='background.10'
               fontSize='md'
             >
               {workout.accessories.name}
             </Text>
             <Text
-              color='white'
+              color='background.10'
               fontSize='md'
             >
               {workout.accessories.rpe}
             </Text>
             <Text
-              color='white'
+              color='background.10'
               fontSize='md'
             >
               {workout.accessories.sets}

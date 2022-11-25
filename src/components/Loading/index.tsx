@@ -4,12 +4,12 @@ const Loading = () => {
   return (
     <Center
       flex={1}
-      bg='black'
+      bg='background.0'
     >
       <Text
         fontWeight={600}
         fontSize='xl'
-        color='pink.600'
+        color='background.5'
       >
         Loading...
       </Text>
