@@ -3,16 +3,16 @@ import {
   useNavigationContainerRef
 } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Drawer from './Drawer';
-import Dashboard from './Drawer';
-import RpeCalculator from './RpeCalculator';
-import WorkoutDetails from './WorkoutDetails';
-import Workouts from './Workouts';
+import Drawer from './Drawer/Drawer';
+import Dashboard from './Drawer/Drawer';
+import RpeCalculator from '../screens/Drawer/RPECalculator';
+import WorkoutDetails from '../screens/Drawer/Workouts/WorkoutDetails';
+import Workouts from '../screens/Drawer/Workouts';
 import { AntDesign } from '@expo/vector-icons';
 import { Pressable, useTheme } from 'native-base';
 import { useCallback } from 'react';
 import { Workout } from '../interfaces/types';
-import AddWorkout from './AddWorkout';
+import AddWorkout from '../screens/AddWorkout';
 
 type Routes = {
   Drawer: undefined;

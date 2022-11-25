@@ -1,15 +1,14 @@
 import { Heading, HStack, ScrollView, VStack } from 'native-base';
 import { useForm } from 'react-hook-form';
-import InputForm from '../components/InputForm';
+import InputForm from '../../components/InputForm';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useSchemas } from '../hooks/useSchemas';
-import Button from '../components/Button';
-import { CREATE_WORKOUT } from '../api/apolloServer';
+import { useSchemas } from '../../hooks/useSchemas';
+import Button from '../../components/Button';
+import { CREATE_WORKOUT } from '../../graphql/apolloServer';
 import { useMutation } from '@apollo/client';
 import { useCallback } from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '.';
-
+import { RootStackParamList } from '../../routes';
 type Props = NativeStackScreenProps<RootStackParamList, 'AddWorkout'>;
 
 const AddWorkout = ({ navigation }: Props) => {

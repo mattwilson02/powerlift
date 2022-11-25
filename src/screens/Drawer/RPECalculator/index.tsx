@@ -1,6 +1,6 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { VStack } from 'native-base';
-import { RootStackParamList } from '.';
+import { RootStackParamList } from '../../../routes';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'RpeCalculator'>;
 

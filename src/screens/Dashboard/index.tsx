@@ -1,13 +1,13 @@
 import { Heading, HStack, ScrollView, Text, VStack } from 'native-base';
 import { useQuery } from '@apollo/client';
-import { GET_MY_SBD_MAX } from '../api/apolloServer';
-import { LiftStats } from '../interfaces/types';
-import ProgressIndicator from '../components/ProgressIndicator';
-import Loading from '../components/Loading';
+import { GET_MY_SBD_MAX } from '../../graphql/apolloServer';
+import { LiftStats } from '../../interfaces/types';
+import ProgressIndicator from '../../components/ProgressIndicator/ProgressIndicator';
+import Loading from '../../components/Loading';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '.';
+import { RootStackParamList } from '../../routes';
 import { useEffect, useState } from 'react';
-import Clock from '../components/Clock';
+import Clock from '../../components/Clock';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Dashboard'>;
 

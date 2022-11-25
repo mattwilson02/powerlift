@@ -1,7 +1,7 @@
 import { NativeBaseProvider } from 'native-base';
 import { useFonts } from 'expo-font';
 import theme from './src/styles/theme';
-import Routes from './src/screens';
+import Routes from './src/routes';
 
 import {
   ApolloClient,

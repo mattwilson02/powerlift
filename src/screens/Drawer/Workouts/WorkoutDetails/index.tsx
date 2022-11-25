@@ -1,6 +1,6 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Heading, HStack, Text, View, VStack } from 'native-base';
-import { RootStackParamList } from '.';
+import { RootStackParamList } from '../../../../routes';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'WorkoutDetails'>;
 

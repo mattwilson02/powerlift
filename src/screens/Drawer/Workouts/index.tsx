@@ -8,12 +8,12 @@ import {
   View,
   VStack
 } from 'native-base';
-import { GET_MY_WORKOUT } from '../api/apolloServer';
-import Loading from '../components/Loading';
+import { GET_MY_WORKOUT } from '../../../graphql/apolloServer';
+import Loading from '../../../components/Loading';
 import { AntDesign } from '@expo/vector-icons';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '.';
-import { Workout } from '../interfaces/types';
+import { RootStackParamList } from '../../../routes';
+import { Workout } from '../../../interfaces/types';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Workouts'>;
 
