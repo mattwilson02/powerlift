@@ -5,7 +5,7 @@ import { RootStackParamList } from '../../../../routes';
 type Props = NativeStackScreenProps<RootStackParamList, 'WorkoutDetails'>;
 
 const WorkoutDetails = ({ route }: Props) => {
-  const workout = route.params.details;
+  const workout = route.params?.details;
 
   if (!workout) return;
 

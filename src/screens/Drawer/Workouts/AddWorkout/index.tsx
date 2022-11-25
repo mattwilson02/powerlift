@@ -42,7 +42,7 @@ const AddWorkout = ({ navigation }: Props) => {
             sets: accessoriesSets,
             rpe: accessoriesRPE
           },
-          id: 2
+          id: 10
           // TODO: randomise an id
         }
       });
