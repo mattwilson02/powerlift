@@ -12,7 +12,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { Pressable, useTheme } from 'native-base';
 import { useCallback } from 'react';
 import { Workout } from '../interfaces/types';
-import AddWorkout from '../screens/AddWorkout';
+import AddWorkout from '../screens/Drawer/Workouts/AddWorkout';
 
 type Routes = {
   Drawer: undefined;
