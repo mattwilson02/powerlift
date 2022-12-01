@@ -41,3 +41,13 @@ export const CREATE_WORKOUT = gql`
     }
   }
 `;
+
+export const DELETE_WORKOUT = gql`
+  mutation DeleteWorkout($id: Int) {
+    delete_workout(where: { id: { _eq: $id } }) {
+      returning {
+        id
+      }
+    }
+  }
+`;

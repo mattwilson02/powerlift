@@ -9,6 +9,7 @@ import { useMutation } from '@apollo/client';
 import { useCallback } from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../../../routes';
+
 type Props = NativeStackScreenProps<RootStackParamList, 'AddWorkout'>;
 
 const AddWorkout = ({ navigation }: Props) => {
@@ -42,7 +43,7 @@ const AddWorkout = ({ navigation }: Props) => {
             sets: accessoriesSets,
             rpe: accessoriesRPE
           },
-          id: 10
+          id: 12
           // TODO: randomise an id
         }
       });

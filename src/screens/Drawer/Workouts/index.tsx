@@ -15,6 +15,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../../routes';
 import { Workout } from '../../../interfaces/types';
+
 import NavigationCard from '../../../components/NavigationCard';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Workouts'>;
@@ -22,8 +23,6 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Workouts'>;
 const Workouts = ({ navigation }: Props) => {
   const { data, loading } = useQuery(GET_MY_WORKOUT);
   const { colors } = useTheme();
-
-  console.log(data?.workout);
 
   return loading ? (
     <Loading />
